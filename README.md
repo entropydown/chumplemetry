@@ -1,21 +1,27 @@
 # chumplemetry
 
 ## the physical hardware box
-  * mounted in cg of car
   * has gps antenna
-  * hardwired power from car
+  * external power (usb power, hardwire)
   * 4g sim for upload of telemetry strings to "cloud"
+  * wifi for debug mode
   * some internal memory for buffering
   * N analog opto-isolated electrical inputs
   * 3 axis acclorometer (0g-2g)
   * gps at least 10hz update rate capable
-  * N warning light outputs: probably wired to some leds
-  * N general purpose light outputs: at least one wired to led to indicate shift rpm
-  * determine if a warning light should be lit based on the value from one of the N analog inputs
-  * determine if a general purpose light should be lit based on the value from one of the N analog inputs
-  * generates a telemetry string from the analog inputs, acclorometer, gps at a configurable interval
-  * uploads the telemetry string to the "cloud" at a configurable interval
-  * polls the cloud for "configuration"
+  * N warning outputs: probably wired to some leds
+  * N general purpose outputs: at least one wired to led to indicate shift rpm
+  * computation limited to sampling analog inputs, determing warning thresholds, constructing and uploading telemetry string
+  * determine if a warning output should be triggered based on the value from one of the N analog inputs
+  * determine if a general purpose output should be triggered based on the value from one of the N analog inputs
+  * generate a telemetry string from the analog inputs, acclorometer, gps at a configurable interval
+  * upload the telemetry string to the "cloud" at a configurable interval
+  * poll the cloud for "configuration"
+  * some mechanism to update software (update from sd card / usb)
+  * has physical ruggedness:
+    * high vibration
+    * dust
+    * water?
 
 ## the "cloud" software
   * feeds the telemetry strings to kibana
@@ -24,7 +30,7 @@
     * visual of track from gps data
     * heatmap of selectable data channel overlayed onto track visual
     * display of analog input values
-  * data is labeled by driver
+  * data is labeled by driver (the person)
   * compare driver to driver or lap to lap
   * "push" configuration to the physical hardware box:
      * sample rates of each analog input
