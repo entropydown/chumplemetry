@@ -7,14 +7,14 @@
   * wifi for debug mode
   * some internal memory for buffering
   * N analog opto-isolated electrical inputs
-  * 3 axis acclorometer (0g-2g)
+  * 3 axis accelerometer (0g-2g)
   * gps at least 10hz update rate capable
   * N warning outputs: probably wired to some leds
   * N general purpose outputs: at least one wired to led to indicate shift rpm
-  * computation limited to sampling analog inputs, determing warning thresholds, constructing and uploading telemetry string
+  * computation limited to sampling analog inputs, determining warning thresholds, constructing and uploading telemetry string
   * determine if a warning output should be triggered based on the value from one of the N analog inputs
   * determine if a general purpose output should be triggered based on the value from one of the N analog inputs
-  * generate a telemetry string from the analog inputs, acclorometer, gps at a configurable interval
+  * generate a telemetry string from the analog inputs, accelerometer, gps at a configurable interval
   * upload the telemetry string to the "cloud" at a configurable interval
   * poll the cloud for "configuration"
   * some mechanism to update software (update from sd card / usb)
@@ -28,16 +28,16 @@
     * visualize a bunch of stuff
   * parse the telemetry strings to display ui stuff
     * visual of track from gps data
-    * heatmap of selectable data channel overlayed onto track visual
+    * heatmap of selectable data channel overlaid onto track visual
     * display of analog input values
   * data is labeled by driver (the person)
   * compare driver to driver or lap to lap
   * "push" configuration to the physical hardware box:
      * sample rates of each analog input
-     * how to intrepret the analog signals e.g. voltage based, resistance based and calibration e.g 2v-5v
+     * how to interpret the analog signals e.g. voltage based, resistance based and calibration e.g 2v-5v
      * labels for each analog input
      * sample rate of gps
-     * sample rate of acclerometer
+     * sample rate of accelerometer
      * warning thresholds for each input
 
 ## cool, optional (?) features
